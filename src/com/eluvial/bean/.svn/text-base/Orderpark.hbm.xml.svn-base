@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-14 17:33:20 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.eluvial.bean.Orderpark" table="t_p_order">
+		<id name="id" type="int">
+			<column name="co_id" />
+			<generator class="native" />
+		</id>
+		<property generated="never" lazy="false" name="car_id"
+			type="java.lang.String">
+			<column name="car_id" />
+		</property>
+		<property generated="never" lazy="false" name="co_price"
+			type="float">
+			<column name="co_price" />
+		</property>
+		<property generated="never" lazy="false" name="total_price"
+			type="float">
+			<column name="total_price" />
+		</property>
+		<property generated="never" lazy="false" name="co_date"
+			type="java.lang.String">
+			<column name="co_date" />
+		</property>
+		<property generated="never" lazy="false" name="leave_time"
+			type="java.lang.String">
+			<column name="leave_time" />
+		</property>
+		<property generated="never" lazy="false" name="reach_time"
+			type="java.lang.String">
+			<column name="reach_time" />
+		</property>
+		<property generated="never" lazy="false" name="confirm_leave"
+			type="int">
+			<column name="confirm_leave" />
+		</property>
+		<property generated="never" lazy="false" name="confirm_reach"
+			type="int">
+			<column name="confirm_reach" />
+		</property>
+		<property generated="never" lazy="false" name="delay" type="int">
+			<column name="delay" />
+		</property>
+		<property generated="never" lazy="false" name="parking_id"
+			type="int">
+			<column name="parking_id" />
+		</property>
+		<property generated="never" lazy="false" name="user_name"
+			type="string">
+			<column name="user_name" />
+		</property>
+		<property name="price" type="float">
+			<column name="unit_price" />
+		</property>
+		<property generated="never" lazy="false" name="parking_name"
+			type="string">
+			<column name="parking_name" />
+		</property>
+	</class>
+</hibernate-mapping>

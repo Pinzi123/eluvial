@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-11 14:51:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.eluvial.bean.FSOrder" table="t_fs_order">
+        <id name="id" type="int">
+            <column name="fso_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="fs_name" type="java.lang.String">
+            <column name="fs_name" />
+        </property>
+        <property name="car_id" type="java.lang.String">
+            <column name="car_id" />
+        </property>
+        <property name="user_name" type="java.lang.String">
+            <column name="user_name" />
+        </property>
+        <property name="confirm" type="int">
+            <column name="fs_confirm" />
+        </property>
+        <property name="order_date" type="java.lang.String">
+            <column name="fs_order_date" />
+        </property>
+        <property name="notes" type="java.lang.String">
+            <column name="notes" />
+        </property>
+        <property name="appointment" type="java.lang.String">
+            <column name="appointment_time" />
+        </property>
+    </class>
+</hibernate-mapping>

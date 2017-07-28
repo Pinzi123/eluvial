@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-11 14:51:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.eluvial.bean.FS" table="t_fs_info">
+        <id name="id" type="int">
+            <column name="fs_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="fs_name" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="fs_address" />
+        </property>
+        <property name="detail" type="java.lang.String">
+            <column name="fs_detail" />
+        </property>
+        <property name="img" type="java.lang.String">
+            <column name="fs_img" />
+        </property>
+        <property name="zan" type="int">
+            <column name="fs_zan" />
+        </property>
+        <property name="cai" type="int">
+            <column name="fs_cai" />
+        </property>
+        <property name="tel" type="java.lang.String">
+            <column name="fs_tel" />
+        </property>
+        <property name="lat" type="java.lang.String">
+            <column name="latitude" />
+        </property>
+        <property name="lng" type="java.lang.String">
+            <column name="longitude" />
+        </property>
+    </class>
+</hibernate-mapping>

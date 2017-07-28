@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		request.setCharacterEncoding("utf-8");
+		Cookie[] cookies = request.getCookies();
+		for (Cookie c : cookies) {
+			//如果有名为str的cookie值，则是要需找的
+			if (c.getName().startsWith("emer")) {
+				out.print(java.net.URLDecoder.decode(c.getValue()) + "<br>");
+			}
+		}
+	%>
+</body>
+</html>

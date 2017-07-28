@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>关于我们</title>
+<link rel="stylesheet" type="text/css" href="about/style.css"/>
+<link rel="stylesheet" type="text/css" href="about/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="about/css/font-awesome.min.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://fonts.useso.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.useso.com/css?family=Lato:400,900,700,300,100' rel='stylesheet' type='text/css'>
+<link href='https://fonts.useso.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+<script src="https://ajax.useso.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="header">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-md-12 col-sm-12 col-xs-12">
+            	<div class="logo pull-left col-md-6 col-sm-6 col-xs-12">
+                	<h1>Eluvial</h1>
+                </div>
+                <div class="social col-md-6 col-sm-6 col-xs-12">
+            		<ul class="pull-right">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+            	<div class="main-title text-center">
+                	<h2>一路无忧</h2>
+                    <p>致力于为车主的行车提供方便</p>
+                    <div id="countdown" data-wow-delay=".3s" data-date="Dec 26, 2015 06:00:00"></div>
+                    <a href="#footer" class="subscribe-tag page-scroll">欢迎你的加入</a>
+                </div>
+                
+                	
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about text-center">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-md-12">
+            	<div class="title">
+                	<h3>关于我们</h3>
+                </div>
+                <div class="desc">
+                	<p>一路无忧（Eluvial）从车主使用频次相对较高的刚需点切入，并且吸引用户，然后再为车主提供汽车相关的一站式服务，比如车辆维修保养和预定停车位等。从产品上看，车主无忧更像一个汽车垂直领域的大众点评。</p>
+                </div>
+            </div>
+            <div class="featurebox col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+            	<div class="feature text-left">
+                	<h4>企业制度</h4>
+                    <p>“忠实于制度”：按制度处理事情，行而有度，不触雷区；
+                        “忠实于流程”：事情的处理要按照流程来办，保证有序性；
+                        “尊重客户”：客户是我们的支持，要对其耐心礼貌，听取客户意见；
+                        “尊重员工”：为员工提供更好的发展空间和薪资待遇，温情对待。
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+            	<div class="feature text-left">
+                	<h4>公司理念</h4>
+                    <p>集单一高频的汽车服务为一身，最大方便车主的需要，以持续的优化和创新发展，营造多元化、全方位的丰富消费体验，提供高质、超值、安全的商品和服务，带来越来越好的生活方式。一路无忧，出行方便，汽车拓展生活，生活有爱，服务有爱。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+            	<div class="feature text-left">
+                	<h4>现有业务</h4>
+                    <p>停车预定，汽车维修，违章缴费，突发应急</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+            	<div class="feature text-left">
+                	<h4>公司目标</h4>
+                    <p>成为最方便的汽车一条龙服务网站</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer" id="footer">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-md-12">
+        	<div class="footer-title text-center">
+            	<h3>填写邮箱</h3>
+                <p>具体招聘信息将下发到您的邮箱，你可以选择职位投递详细个人介绍与简历到我们的邮箱，我们一路无忧是一个有爱的大集体，十分欢迎你的加入，期待你我的共同成长！</p>
+            </div>
+            <div class="subscribeform">
+            	<form class="subscribe_form" action="#" method="post">
+	                <input required value=""  class="email" id="email" name="email" type="email">
+	                <input class="subscribe" name="email" value="提交" type="submit">
+	            </form>
+            </div>
+            <div class="social text-center">
+            		<ul>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+             </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="about/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="about/js/jquery.countdown.min.js"></script>
+<script type="text/javascript">
+if ($('#countdown').length) { 
+			$('#countdown').countdown({
+				render: function(data) {
+					if (data.years >= 1) {
+						var $days =	(data.years*365)+data.days;
+					} else {
+						var $days = data.days;
+					}
+				  $(this.el).html(
+					  '<div class="day">' + this.leadingZeros($days) + ' <span>Days</span></div>'+
+					  '<div class="hour">' + this.leadingZeros(data.hours, 2) + ' <span>Hours</span></div>'+
+					  '<div class="min">' + this.leadingZeros(data.min, 2) + ' <span>Minutes</span></div>'+
+					  '<div class="sec">' + this.leadingZeros(data.sec, 2) + ' <span>Seconds</span></div>'
+				  );
+				}
+			});
+		}
+
+</script>
+</body>
+</html>

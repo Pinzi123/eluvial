@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-14 17:33:20 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="com.eluvial.bean.User" table="t_user_info">
+  <id name="name" type="java.lang.String">
+   <column name="user_name"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="password" type="java.lang.String">
+   <column name="user_pass"/>
+  </property>
+  <property generated="never" lazy="false" name="sex" type="java.lang.String">
+   <column default="男" name="user_sex"/>
+  </property>
+  <property generated="never" lazy="false" name="tel" type="java.lang.String">
+   <column name="user_tel"/>
+  </property>
+  <property generated="never" lazy="false" name="address" type="java.lang.String">
+   <column name="user_address"/>
+  </property>
+ </class>
+</hibernate-mapping>

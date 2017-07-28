@@ -1,0 +1,251 @@
+@charset "utf-8";
+/* CSS Document */
+/*导航条*/
+a:hover{
+ color:#F00;
+ font-weight:bold;
+}
+.nav{
+	margin:10px 5px 15px;
+	height:40px;
+	background-color:#000;
+	color:#FFF;
+	border-radius:5px;
+	line-height:40px;
+}
+.nav_left{
+	margin-left:30px;
+}
+.nav a{
+	color:#FFF;
+}
+.nav_right{
+	width:500px;
+}
+.nav_right p{
+	float:right;
+	background:#F00;
+	height:50px;
+	min-width:20px;
+	width:auto;
+	margin-top:-5px;
+	margin-right:20px;
+	padding: 0 5px;
+	line-height:50px;
+	cursor:pointer;
+}
+.nav_right li{
+	float:right;
+	padding-right:20px;
+}
+
+/*内容分类*/
+.banner{
+	font-size:20px;
+	height:40px;
+	border-bottom:#F00 5px solid;
+}
+.banner_left{
+	margin-left:50px;
+	color:#F00;
+	font-weight:bold;
+}
+.banner_left span{
+	background-color:#F00;
+	color:#FFF;
+	padding:5px;
+	margin-right:5px;
+	border-radius:5px;
+}
+.banner_right{
+	margin-right:30px;
+}
+.banner_right li{
+	
+	float:right;
+	padding-right:20px;
+}
+.banner_right li a{
+	height:40px;
+	width:80px;
+	text-align:center;
+	display:inline-block;
+	color:#333;
+	
+}
+.banner_right li a:hover{
+	height:35px;
+	border-bottom:#FFF 5px solid;
+	border-right:#CCC 0.5px solid;
+	border-left:#CCC 0.5px solid;
+	border-top:#F00 5px solid;
+}
+.banner_right li .selected_banner{
+	margin-top:-5px;
+	line-height:40px;
+	border-bottom:#FFF 5px solid;
+	border-right:#CCC 0.5px solid;
+	border-left:#CCC 0.5px solid;
+	border-top:#F00 5px solid;
+	font-weight:bold;
+}
+/*js幻灯片*/
+.ad {
+	clear: both;
+	height:330px;
+	width:1000px;
+	margin: 0px auto;
+	margin-top:15px;
+}
+.ad .pic{
+	height:320px;
+	overflow: hidden;
+}
+.ad .select_pic{
+	text-align:center;
+   height:10px;
+   background-color:#000;
+}
+.ad .select_pic span{
+	display:inline-block;
+	width:40px;
+	height:6px;
+	background-color:#FFF;
+	margin:2px;
+	cursor:pointer;
+}
+/*新闻分类*/
+.new_type{
+	margin-top:10px;
+	border-bottom:#999 solid 1px;
+}
+.new_type p:first-of-type{
+	margin-left:125px;
+}
+.new_type p{
+	font-family:"Courier New", Courier, monospace;
+	font-size:20px;
+	padding-left:20px;
+	text-align:center;
+	float:left;
+	cursor:pointer;	
+}
+.new_type .selected a{
+	color:#F00;
+	font-weight:bold;
+	text-decoration:underline;
+}
+.new_type p a:hover{
+	color:#F09;
+	
+}
+.new_type p:after{
+	padding-left:20px;
+	line-height:45px;
+	content:"|";
+	color:#F00;
+}
+.new_type p:last-of-type{
+	font-weight:bold;
+}
+.new_type p:last-of-type:after{
+	content:"";
+}
+/*推荐新闻瀑布流布局*/
+
+   #main{
+	    margin-left:60px;
+        position: relative;
+    }
+    .pin{
+        padding: 15px 0 0 15px;
+        float:left;
+    }
+    .box{
+        padding: 10px;
+        border:1px solid #ccc;
+        box-shadow: 0 0 6px #ccc;
+        border-radius: 5px;
+    }
+    .box img{
+        width:256px;
+        height:auto;
+    }
+	.box .new_title{
+		width:256px;
+		padding:5px 0 0;
+		font-weight:bold;
+	}
+/*图片放大*/
+#greybackground{
+left: 0px;
+top:0px;
+width:100%;
+opacity: 0.7;
+z-index: 8;
+background:gray;
+position:absolute;
+}
+#hide{
+width:500px;
+height:auto;
+position:absolute;
+left: 300px;
+z-index:9;
+display:none;
+box-shadow: 50px 50px 25px #888888;
+border:5px solid #000;
+background:#FFF;
+}
+#hide p{
+    color:#000;
+	text-align:center;
+}
+#hide img{
+width:380px;
+height:auto;
+}
+#close,#c{
+	background:url(../images/close_btn.png) no-repeat;
+	border:0px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	cursor: pointer;
+}
+#per_pic,#next_pic{
+	cursor:pointer;
+}
+#hideviedo{
+	position:absolute;
+z-index:9;
+display:none;
+box-shadow: 50px 50px 25px #888888;
+border:5px solid #000;
+background:#FFF;
+}
+/* 新闻文字块 */
+.one_new{
+	width: 1000px;
+	height: auto;
+	margin: 10px auto;
+	border: 2px solid black;
+	padding: 10px;
+}
+.one_new h3{
+	text-align: left;
+	color: red;
+	font-weight: bold;
+}
+.one_new h5{
+	text-align: right;
+	color: grey;
+}
+.one_new a{
+	display: inline;
+	font-weight: bold;
+	color:#3366FF;
+}
+/* 回到顶部 */
+#btn {width:40px; height:40px; position:fixed; right:65px; bottom:10px; display:none; background:url(../images/top_bg.png) no-repeat left top;}
+#btn:hover {background:url(../images/top_bg.png) no-repeat 0 -39px;}

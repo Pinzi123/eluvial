@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>店家详情</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/shopdetail.css" />
+    <link rel="stylesheet" type="text/css" href="css/selectTime.css">
+</head>
+<body>
+  <a href="javascript:;" id="btn" title="回到顶部"></a>
+  <div class="nav">
+  <div class="fl">
+    <div class="nav_left">
+    <a href="index.jsp">首页</a>
+    </div>
+  </div>
+  <div class="fr">
+    <div class="nav_right"> 
+    <ul>
+    <li><a href="entertainment/entertainment.html">一点乐趣</a></li>
+    <li><a href="selectPark.jsp">停车预定</a></li>
+    <li><a href="selectFS.jsp">汽车保修</a></li>
+    <li><a href="http://www.jxhld.gov.cn/">违章查询</a></li>
+    <li><a href="order.html">我的订单</a></li>
+    </ul>
+    <p></p>
+    </div>
+  </div>
+  </div>
+<!--导航条结束-->
+     <div class="banner clearfix">
+     <div class="banner_left fl"><span>Eluvial</span>一路无忧 º</div>
+     <div class="banner_right fr">
+     <div class="logo"></div>
+	 	<form class="search-form" action="https://cn.bing.com/search" target="_blank">
+	 		<input type="text" class="search-text" name="q"/>
+	 		<input type="submit" class="search-button" value=""/>
+	 	</form>
+ 	</div>
+    </div>
+<!--banner部分结束-->
+<div class="main clearfix">
+<p class="shop_type">维修保养---><span class="shop_name"></span></p>
+<p class="shop_name"></p>
+    <div class="shop">
+    <div class="shop_left fl">
+    	<div class="pic">
+         <div class="one_pic">
+    	    <img src="images/xcar1.jpg" alt="汽车维修保养">
+            <img src="images/xcar2.jpg" alt="汽车维修保养">
+            <img src="images/xcar3.jpg" alt="汽车维修保养">
+            <img src="images/xcar4.jpg" alt="汽车维修保养">
+          </div>
+        </div>
+        <div class="minpic">
+        	<ul>
+        		<li i="0"  class="native"><img src="images/xcar1.jpg" alt="汽车维修保养"></li>
+        		<li i="1"><img src="images/xcar2.jpg" alt="汽车维修保养"></li>
+        		<li i="2"><img src="images/xcar3.jpg" alt="汽车维修保养"></li>
+        		<li i="3"><img src="images/xcar4.jpg" alt="汽车维修保养"></li>
+        	</ul>
+        </div>
+    </div><!--图片部分结束-->
+    <div class="shop_right fl">
+        <div class="shop_detail clearfix">
+           <div class="fl detail_left">详细描述</div>
+           <div class="fl detail_right">
+           </div>
+         </div>
+        <div class="shop_info  clearfix">
+           <div class="fl info_left">
+              <span id="people_num"></span>人曾预定
+           </div>
+           
+           <div class="fl shop_prefer">
+               <div class="zan">
+                  <div class="addone">+1</div><span class="d_num">赞(0)</span>
+               </div>
+               <div class="cai">
+                  <div class="addone">+1</div><span class="d_num">踩(0)</span>
+               </div>
+           </div>
+           
+           <div class="fl info_right">
+           <p><img src="images/tui.fw.png"><span>随便退</span></p>
+           <p><img src="images/shop.png"><span>商家营业执照</span></p>
+           </div>
+
+        </div>
+
+           <div class="shop_tel">
+
+           </div>
+            <button class="order">立即预定</button>
+     </div>
+     </div>
+</div>
+<!--/*店铺信息显示结束*/-->
+     <div class="order_form">
+     <form action="addOrder.action" method="post">
+     <input  type="hidden" name="fsOrder.user_name" id="user_name">
+     <input  type="hidden" name="fsOrder.fs_name" id="fs_name">
+          <table border="1">
+            <tr>
+              <th>选择到达时间</th>
+              <th>维修保养备注</th>
+              <th>车牌号</th>
+            </tr>
+            <tr>
+              <td><input id="appointment" type="text" name="fsOrder.appointment"></td>
+              <td><input type="text" name="fsOrder.notes"></td>
+              <td><input type="text" name="fsOrder.car_id" id="car_id"></td>
+            </tr>
+          </table>
+          <div class="fr total">
+             <p class="sum">预计金额：<span>&yen;230</span></p>
+             <a href="javascript:;">返回上一步</a>
+             <button class="comfirm" type="submit">确认预定</button>
+          </div>
+          </form>
+    </div>
+<!--    订单填写部分结束-->
+
+<div class="dt">
+    <div class="dtwr dtbg">
+    <div aria-live="assertive" class="dtv">05/26/2014 02:45 PM</div>
+    <div class="dtcc">
+    <div class="dtc fl dtone">
+    <div class="dtwc dtrc">
+      <table cellpadding="0" cellspacing="0">
+      <tr> 
+         <td>
+            <div class="dt_month dtt" type="month">
+              <div class="dtth">
+                   Month
+              </div>   
+              <div class="month">
+                  
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="dt_date dtt" type="date">
+              <div class="dtth">
+                   Date
+              </div>
+              <div class="date">
+             
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="dt_year dtt" type="year">
+              <div class="dtth">
+                   Year
+              </div>
+
+              <div class="year">
+              
+              </div>
+            </div>
+         </td>
+      </tr>
+      </table>
+    </div>
+    </div>
+<!--    日期选择表结束-->
+<div class="dtc fl">
+    <div class="dtwc dtrc">
+      <table cellpadding="0" cellspacing="0">
+      <tr> 
+         <td>
+            <div class="dt_month dtt" type="hours">
+              <div class="dtth">
+                   Hours
+              </div>   
+              <div class="hours">
+
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="dt_date dtt" type="minutes">
+              <div class="dtth">
+                   Minutes
+              </div>
+              <div class="minutes">
+                
+              </div>
+            </div>
+         </td>
+      </tr>
+      </table>
+    </div>
+    </div>
+ <!-- 时间选择部分结束-->
+    </div>
+    <div class="dwbc clearfix">
+    <span class="dwbw dwb-s"><span class="dwb dwb-e" role="button" tabindex="0">Set</span></span><span class="dwbw dwb-c"><span class="dwb dwb-e" role="button" tabindex="0">Cancel</span></span>
+    </div>
+  <!--  选择按钮结束-->
+    </div>
+<script type="text/javascript" src="entertainment/js/jquery-1.8.3.min.js"/></script>
+<script type="text/javascript" src="js/login.js"/></script>
+<script type="text/javascript" src="js/shopdetail.js"/></script>
+<script type="text/javascript" src="js/zan_or_cai.js"/></script>
+<script type="text/javascript" src="entertainment/js/returntop.js"/></script>
+<script src="js/selectTime.js" type="text/javascript"></script>
+</body>
+</html>

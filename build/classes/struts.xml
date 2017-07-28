@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+
+	    <!-- 定义拦截器,未登录不能进入这个页面 -->
+		<interceptors>
+		<interceptor name="checkLogin" class="com.eluvial.interceptor.LoginInterceptor" />
+		</interceptors>
+		<!-- 定义全局Result -->
+		<global-results>
+			<!-- 当返回login视图名时，转入/login.jsp页面 -->
+			<result name="login" type="redirect">/login.jsp</result>
+		</global-results>
+	<action name="login" class="com.eluvial.action.Login" method="login">
+		<result name="success">/index.jsp</result>
+		<result name="error">/login.jsp</result>
+	</action>
+	<action name="logout" class="com.eluvial.action.Login" method="logout">
+		<result name="success">/index.jsp</result>
+		<result name="error">/error/notlogin.jsp</result>
+		<!-- 使用此拦截器 -->
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+	</action>
+	<!-- 验证用户名是否存在 -->
+	<action name="findByName" class="com.eluvial.action.Login" method="findByName">
+	</action>
+	<!-- 验证用户是否登录 -->
+	<action name="findByName" class="com.eluvial.action.Login" method="findByName">
+	</action>
+	<!-- 验证密码是否正确 -->
+	<action name="login_val" class="com.eluvial.action.Login" method="login_val">
+	</action>
+	<!-- 验证验证码是否输入正确 -->
+	<action name="verify" class="com.eluvial.action.Verification_Code">
+    </action>   
+	
+	<action name="register" class="com.eluvial.action.UserAction" method="saveUser">
+            <result name="success">/index.jsp</result>
+            <result name="error">/regist.jsp</result>
+    </action>   
+     
+    <action name="usermodify" class="com.eluvial.action.UserAction" method="updateUser">
+            <result name="success">/userInfo.jsp</result>
+            <!-- 使用此拦截器 -->
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+    </action>
+    
+    <action name="passModify" class="com.eluvial.action.UserAction" method="updatePass">
+            <result name="success">/userInfo.jsp</result>            
+            <!-- 使用此拦截器 -->
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+    </action>
+<!--     查询出所有符合条件的停车场 -->
+	<action name="parks" class="com.eluvial.action.ParksAction">
+		<result name="success">/getParks.jsp</result>
+		<result name="error">/error/error.jsp</result>
+		<result name="full">/error/full.jsp</result>
+	</action>
+	<action name="createpOrder" class="com.eluvial.action.ParkingAction">
+		<result name="success">/order.html</result>
+		<result name="error">/error/error.jsp</result>
+		<result name="full">/error/full.jsp</result>
+		<!-- 使用此拦截器 -->
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+	</action>
+	<action name="pOrders" class="com.eluvial.action.POrdersAction">
+		<result name="success">/pOrdersInfo.jsp</result>
+		<result name="null">/error/null.jsp</result>
+		<!-- 使用此拦截器 -->
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+	</action>
+	<action name="*Action" class="com.eluvial.action.POrderAction" method="{1}">
+	<result name="updatePorder">/order.html</result>
+	<result name="deletePorder">/success.jsp</result>
+	<result name="full">/error/full.jsp</result>
+	</action>
+	<!-- 应急处理-->
+	<action name="findEmerg" class="com.eluvial.action.EmergenciesAction">
+	<result name="success">/getEmergency.jsp</result>
+	<result name="error">/error/noemer.jsp</result>
+	</action>
+	<!-- 查询汽车维修保养 -->
+	<action name="findFS" class="com.eluvial.action.FSsAction">
+	<result name="success">/getFS.jsp</result>
+	<result name="error">/error/noemer.jsp</result>
+	</action>
+	<!-- 对汽车维修保养进行赞 -->
+	<action name="addzan" class="com.eluvial.action.FSsAction" method="addzan">
+	</action>
+	<action name="addcai" class="com.eluvial.action.FSsAction" method="addcai">
+	</action>
+	<!--  预定汽车维修保养 -->
+	<action name="*" class="com.eluvial.action.OrderFSAction" method="{1}">
+	<result name="success">/order.html</result>
+	<result name="orders">/FSorders.jsp</result>
+	<result name="full">/error/full.jsp</result>
+	<!-- 使用此拦截器 -->
+			<interceptor-ref name="checkLogin"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+	</action>
+	<action name="getNews" class="com.eluvial.action.NewsAction">
+	</action>
+	<action name="someNews" class="com.eluvial.action.NewsAction" method="someNews">
+	</action>
+	</package>
+	
+<!-- 	使用JSON插件，让Struts2的包继承json-default -->
+    <package name="json"  namespace="/" extends="json-default">
+     <!-- 返回停车场订单的json数据 -->
+       <action name="querypOrders" class="com.eluvial.action.POrdersAction">
+		<result type="json">
+		<!-- 指定浏览器缓存服务器响应 -->
+		<param name="noCache">false</param>
+         <!--指定排除Action中的值为null的属性 -->
+        <param name="excludeNullProperties">true</param>
+		</result>
+	  </action>
+	  <!-- 返回停车场信息的json数据 -->
+	  <action name="selectPark" class="com.eluvial.action.ParksAction" method="onePark">
+		<result type="json">
+		<!-- 指定浏览器缓存服务器响应 -->
+		<param name="noCache">false</param>
+         <!--指定排除Action中的值为null的属性 -->
+        <param name="excludeNullProperties">true</param>
+		</result>
+	  </action>
+	  <!-- 返回维修管理店信息的json数据 -->
+	  <action name="selectFS" class="com.eluvial.action.FSsAction" method="oneFS">
+		<result type="json">
+		<!-- 指定浏览器缓存服务器响应 -->
+		<param name="noCache">false</param>
+         <!--指定排除Action中的值为null的属性 -->
+        <param name="excludeNullProperties">true</param>
+		</result>
+	  </action>
+    </package>
+</struts>

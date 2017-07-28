@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-1-3 16:48:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.eluvial.bean.Emergency" table="t_emergency_info">
+        <id name="emerId" type="int">
+            <column name="emer_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="emerType" type="java.lang.String">
+            <column name="emer_type" />
+        </property>
+        <property name="emerCase" type="java.lang.String">
+            <column name="emer_case" />
+        </property>
+        <property name="emerSolution" type="java.lang.String">
+            <column name="emer_solution" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-14 17:33:20 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.eluvial.bean.Parking" table="t_parking_info">
+        <id name="id" type="int">
+            <column name="parking_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="parking_name" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="parking_address" />
+        </property>
+        <property name="total" type="int">
+            <column name="parking_total" />
+        </property>
+        <property name="remainder" type="int">
+            <column name="remainder" />
+        </property>
+        <property name="tel" type="java.lang.String">
+            <column name="parking_tel" />
+        </property>
+        <property name="lat" type="java.lang.String">
+            <column name="latitude" />
+        </property>
+        <property name="lng" type="java.lang.String">
+            <column name="longitude" />
+        </property>
+        <property name="price" type="float">
+            <column name="unit_price" />
+        </property>
+    </class>
+</hibernate-mapping>

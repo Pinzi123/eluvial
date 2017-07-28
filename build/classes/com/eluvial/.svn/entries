@@ -1,0 +1,46 @@
+10
+
+dir
+8
+svn://www.svn999.com/pinzi123.eluvial/eluvial/src/com/eluvial
+svn://www.svn999.com/pinzi123.eluvial
+
+
+
+2016-05-19T12:29:57.407202Z
+8
+pinzi123
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4863cbee-a6ac-47b2-aade-657934f2c78b
+
+service
+dir
+
+dao
+dir
+
+bean
+dir
+
+action
+dir
+
+util
+dir
+
+interceptor
+dir
+

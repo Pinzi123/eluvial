@@ -1,0 +1,269 @@
+var lists,dataInt;
+$( window ).on( "load", function(){
+	
+	$(".news_pic").on("click",function(event){
+		$(".new_tutiao").empty();
+		$( "#main").empty();
+		$("#hide p").empty();
+		var type=$(this).attr('newtype');
+		if(type===undefined||type===null){
+			$(".selected").removeClass("selected");
+			$(this).addClass("selected");
+			getWord();
+			
+		}else{
+		$(".selected").removeClass("selected");
+		$(this).addClass("selected");
+		getNew(type);
+	    }
+		/*$(".box img:last").load(function(){alert("wancheng19");waterfall();});*/
+			event.stopPropagation();
+			
+		
+	 });
+	
+	$(".banner_right li a").on("click",function(event){
+		$(".new_type").hide();
+		$(".new_tutiao").empty();
+		$( "#main").empty();
+		$("#hide p").empty();
+		var type=$(this).attr('type');
+		if(type==="news_id"){
+			$(".new_type").show();
+			$(".selected_banner").removeClass("selected_banner");
+			$(this).addClass("selected_banner");
+			$(".selected").removeClass("selected");
+			$(".news_pic:last-child").addClass("selected");
+			getWord();
+			
+		}else{
+		$(".new_type").hide();
+		$(".selected_banner").removeClass("selected_banner");
+		$(this).addClass("selected_banner");
+		getNew(type);
+	    }
+		
+/*		$(".box img:last").load(function(){alert("wancheng46");waterfall();});*/
+			event.stopPropagation();
+		
+	 });
+	
+	$("img").error(function() {
+		$(this).attr("src", "images/1.jpg");
+		}); 
+});
+
+function waterfall(){
+	console.log($(".pin").length);
+	var $aPin=$(".pin");
+	var Pinw=$aPin.eq(0).width();
+	var num=Math.floor($(window).width()/Pinw);
+	$("#main").css({
+		'width:':Pinw*num,
+		'margin:':'0 auto'
+	});
+	var HArr=[];
+	$aPin.each(function(index,value){
+		var PinH=$aPin.eq(index).height();
+		//console.log(PinH);
+		if (index<num) {
+			HArr[ index ] = PinH;		
+		}else{
+			var minH=Math.min.apply( null, HArr);
+			var minIndex=$.inArray(minH,HArr);
+			$(value).css({
+				'position':'absolute',
+				'top':minH+15,
+				'left':$aPin.eq(minIndex).position().left
+			});
+			HArr[minIndex]+=PinH+15;
+		}
+	});
+	
+}
+
+function checkscrollside(){
+	var $aPin=$("#main>div");
+	var lastPinH=$aPin.last().get(0).offsetTop+Math.floor($aPin.last().height()/2);
+	var scrollTop =$(window).scrollTop();
+	var windowH=$(window).height();
+	return (lastPinH<scrollTop+windowH)?true:false;
+}
+
+//放大图片
+function  enlarge($pic){
+var num=0;
+$(".box").click(function(e){
+	e.stopPropagation();
+	num=0;
+var i=$(this).attr("index");
+if(lists[i].pics===undefined){
+	alert("没有内容了");
+}else{
+// 获取当前页面的各种高度
+var height=$(document).height();
+//append遮罩层元素
+$('body').append
+("<div id=greybackground style='height:"+height+"px';></div>");
+
+//在弹出框加入图片
+$pic.attr('src', lists[i].pics.list[0].kpic).load(
+		function(){
+			e.stopPropagation();
+			position();
+			$("#hide p").html(lists[i].intro);
+		});
+//显示弹出框
+$("#hide").slideDown("slow");
+//绑定图片转换
+$("#next_pic").bind("click",{'i':i},next);
+$("#per_pic").bind("click",{'i':i},per);
+//绑定锁定背景
+$("body").css({overflow:"hidden"});
+}
+});
+
+
+$("#close").click(function(){
+//关闭弹出框
+$(this).closest('div').hide();
+$("#greybackground").remove();
+//解除绑定背景
+$("body").css({overflow:"scroll"}); 
+//解除绑定图片转换
+$("#next_pic").unbind("click",next);
+$("#per_pic").unbind("click",per);
+});
+/*$(".text").click(function(){
+alert($(this).attr('id'));
+})*/
+
+function next(e){
+	e.stopPropagation();
+	if(num<lists[e.data.i].pics.list.length-1){
+	num++;   
+    $pic.attr('src', lists[e.data.i].pics.list[num].kpic).load(
+    		function(){
+    			position();
+    		});
+    }
+//	console.log(e.data.i+" "+num);
+}
+function per(e){
+	e.stopPropagation();
+	if(num>0){
+	num--;
+	$pic.attr('src', lists[e.data.i].pics.list[num].kpic).load(function(){
+		position();
+	});
+	}
+// 	console.log(e.data.i+" "+num);
+}
+
+}
+function position(){
+	// 获取当前页面的各种高度
+	var height=$(document).height();
+	var newheight=$(window).scrollTop();
+	var hidew=$("#hidepic").width();
+	var hideh=$("#hidepic").height();
+	var now_left=$(window).width()/2-hidew/2-50;
+
+	var now_top=newheight+$(window).height()/2-hideh/2;
+	console.log(hideh);
+	//确定偏移位置
+	$("#hide").css({
+		left: now_left+'px',
+		top: now_top+'px'
+	});
+	
+}
+//异步获取新闻
+function getNew(newtype){
+	$.ajax({
+		url : 'getNews.action',
+		data : {
+			type:newtype,
+		},
+		type : 'post',
+		dataType : 'text',
+		success : function(data) {
+			if (data!=null) {
+				dataInt= JSON.parse(data);
+				addNew(newtype);
+			} 
+		},
+		error : function() {
+			alert("无法获取远程数据,请检查你的网络连接或者设置");
+		}
+	});
+}
+function addNew(newtype){
+	lists=dataInt.data.list;
+		$.each(lists,function(index, value) {
+			var $oPin = $('<div>').addClass('pin').appendTo($( "#main"));
+			var $oBox = $('<div>').addClass('box').appendTo( $oPin );
+		$oBox.attr("index",index);
+			$('<img>').attr('src', value.kpic ).appendTo($oBox);
+		var $t=$('<p>').addClass('new_title').appendTo($oBox);
+		$t.append(value.title);
+		});
+if(newtype.indexOf("video")>-1){
+	watchvedio();
+  }else{
+	  var $pic=$('#hidepic');
+	  //$(".box img:last").load(waterfall());错误
+      $(".box img:last").load(function(){waterfall();});
+      enlarge($pic);
+      }
+}
+
+//观看视频
+function watchvedio(){
+	var num=0;
+	$(".box").click(function(e){
+		e.stopPropagation();
+		num=0;
+	var i=$(this).attr("index");
+	if(lists[i].video_info===undefined){
+		alert("没有内容了");
+	}else{
+
+	// 获取当前页面的各种高度
+	var height=$(document).height();
+
+	//append遮罩层元素
+	$('body').append
+	("<div id=greybackground style='height:"+height+"px';></div>");
+
+	//在弹出框加入图片
+	var $viedo=$("#media");
+	$viedo.attr('src', lists[i].video_info.url);
+	// 获取当前页面的各种高度
+	var newheight=$(window).scrollTop();
+	var now_left=$(window).width()/3+30;
+
+	var now_top=newheight+$(window).height()/3-50;
+
+	//确定偏移位置
+	$("#hideviedo").css({
+		left: now_left+'px',
+		top: now_top+'px'
+	});
+	//显示弹出框
+	$("#hideviedo").slideDown("slow");
+	//绑定锁定背景
+	$("body").css({overflow:"hidden"});
+	}
+	});
+
+
+	$("#hideviedo").click(function(){
+	//关闭弹出框
+	$("#media").attr('src',"");
+	$("#hideviedo").hide();
+	$("#greybackground").remove();
+	//解除绑定背景
+	$("body").css({overflow:"scroll"}); 
+	});
+}

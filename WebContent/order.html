@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单列表</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/order.css" />
+</head>
+<body>
+	<a href="javascript:;" id="btn" title="回到顶部"></a>
+  <div class="nav">
+  <div class="fl">
+    <div class="nav_left">
+    <a href="index.jsp">首页</a>
+    </div>
+  </div>
+  <div class="fr">
+    <div class="nav_right"> 
+    <ul>
+    <li><a href="selectPark.jsp">停车预定</a></li>
+    <li><a href="selectFS.jsp">汽车保修</a></li>
+    <li><a href="http://www.jxhld.gov.cn/">违章查询</a></li>
+    <li><a href="entertainment/entertainment.html">一点乐趣</a></li>
+    </ul>
+    <p></p>
+    </div>
+  </div>
+  </div>
+<!--导航条结束-->
+     <div class="banner clearfix">
+     <div class="banner_left fl"><span>Eluvial</span>一路无忧 º</div>
+     <div class="banner_right fr">
+     <div class="logo"></div>
+	 	<form class="search-form" action="https://cn.bing.com/search" target="_blank">
+	 		<input type="text" class="search-text" name="q"/>
+	 		<input type="submit" class="search-button" value=""/>
+	 	</form>
+ 	</div>
+    </div>
+<!--banner部分结束-->
+<div class="order_num clearfix">
+	<p class="fl">用户名:<span id="user"></span></p>
+	<p class="fr">订单数量：<span id="order_num">16</span></p>
+</div>
+<!--用户订单总量结束-->
+<div class="content clearfix">
+	<div class="content_left fl">
+	<ul>
+		<li class="sub_nav"><a class="sub_current" href="#">我的订单</a>
+			<ul>
+				<li id="park"><a href="#" class="native"><span class="sub-nav-ico">&#149;</span>停车</a></li>
+				<li id="FS"><a href="#"><span class="sub-nav-ico">&#149;</span>维修保养</a></li>
+			</ul>
+		</li>
+		<li class="sub_nav"><a href="#">我的收藏</a></li>
+	</ul>
+	<div class="csc">
+	    <p class="tel">4666-888-888</p>
+		<p>客服电话&nbsp;免长途费</p>
+		<p>周一至周日 9:00-22:00</p>
+	</div>
+	</div>
+	<div class="content_right fl">
+	<div class="clearfix">
+	<ul>
+		<li class="fl"><a class="use current" href="#">全部</a></li>
+		<li class="fl"><a class="use" type="0" href="#">未使用</a></li>
+		<li class="fl"><a class="use" type="1" href="#">已使用</a></li>
+	</ul>
+	</div>
+	<div>
+	<table class="order_list ">
+	   <tr>
+			<th width="160">预定信息</th>
+	        <th width="160">预定车牌</th>
+	        <th width="120">状态</th>
+	        <th width="160">备注</th>
+	        <th width="120">操作</th>
+        </tr>
+       <tr class="addinfo">
+       	<td align="center"><p>店铺名：<span class="name">实验店</span></p>
+       	<p>预定时间：<span class="order_time">2016-5-4</span></p></td>
+       	<td align="center">赣A45874</td>
+       	<td align="center">未使用</td>
+       	<td align="center">汽车保修</td>
+       	<td align="center"><p><a href="#">取消</a></p><p><a href="#">修改</a></p></td>
+       </tr>
+	</table>
+	</div>
+	</div>
+</div>
+<script type="text/javascript" src="entertainment/js/jquery-1.8.3.min.js"/></script>
+<script type="text/javascript" src="js/order_operation.js"/></script>
+<script type="text/javascript" src="js/order.js"/></script>
+<script type="text/javascript" src="entertainment/js/returntop.js"/></script>
+
+</body>
+</html>
